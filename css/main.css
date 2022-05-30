@@ -61,5 +61,5 @@ main {
 .fortnite-sex {
     border-radius: 20%;
     padding: .5rem;
-    animation: blink 10s ease-in-out infinite alternate-reverse;
+    animation: blink 10s ease-in-out infinite;
 }
