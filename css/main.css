@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --blink: rgba(197, 123, 96, 0.75);
+}
+
+html {
+    background-color: #171717;
+    font-family: 'Kalam', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes blink {
+    0% {
+        background-color: var(--blink);
+    }
+    50% {
+        background-color: cadetblue;
+    }
+    100% {
+        background-color: var(--blink);
+    }
+}
+
+header {
+    max-width: 50%;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: .35rem;
+    animation: blink 10s ease-in-out infinite;
+}
+
+.hero__line1,
+.hero__line2 {
+    text-align: center;
+}
+
+.hero__line1 {
+    font-size: 2rem;
+    border-bottom: 3px solid white;
+}
+
+.hero__line2 {
+    padding-top: 1rem;
+    font-size: 3.5rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fortnite-sex {
+    border-radius: 20%;
+    padding: .5rem;
+    animation: blink 10s ease-in-out infinite alternate-reverse;
+}
