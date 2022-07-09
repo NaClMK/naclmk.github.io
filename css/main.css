@@ -16,6 +16,8 @@
     --about-border: .35rem;
     --about-gap: 2rem;
     --about-padding: 1.5rem;
+    --scale-change: 1.1;
+    --scale-timing: .3s;
 }
 
 html {
@@ -81,7 +83,7 @@ a {
 
 nav {
     margin: 2rem auto 0;
-    max-width: 30%;
+    max-width: 25%;
     font-size: 1.25rem;
     background-color: rgba(35, 35, 35, 0.75);
     border-radius: .5rem;
@@ -170,40 +172,6 @@ nav a.disabled {
 }
 
 
-/* about page content */
-
-.about-container {
-    margin: 0 auto;
-    max-width: 70%;
-    display: flex;
-    flex-direction: row;
-    gap: var(--about-gap);
-    text-align: center;
-}
-
-.about__vertical {
-    display: flex;
-    align-items: center;
-    padding: var(--about-padding);
-    background-color: rgba(35, 35, 35, 0.75);
-    border-radius: var(--about-border);
-    box-shadow: var(--box-shadow);
-}
-
-.about__horizontal-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: var(--about-gap);
-}
-
-.about__horizontal {
-    padding: var(--about-padding);
-    background-color: rgba(35, 35, 35, 0.75);
-    border-radius: var(--about-border);
-    box-shadow: var(--box-shadow);
-}
-
-
 /* contact page content */
 
 .contact-container {
@@ -254,40 +222,70 @@ a.contact:hover {
     font: var(--fa-font-brands);
     content: "\f392";
     color: var(--clr-discord);
+    transition: transform var(--scale-timing) ease-in-out;
+}
+
+.discord:hover::before {
+    transform: scale(var(--scale-change));
 }
 
 .twitter::before {
     font: var(--fa-font-brands);
     content: "\f099";
     color: var(--clr-twitter);
+    transition: transform var(--scale-timing) ease-in-out;
+}
+
+.twitter:hover::before {
+    transform: scale(var(--scale-change));
 }
 
 .youtube::before {
     font: var(--fa-font-brands);
     content: "\f167";
     color: var(--clr-youtube);
+    transition: transform var(--scale-timing) ease-in-out;
+}
+
+.youtube:hover::before {
+    transform: scale(var(--scale-change));
 }
 
 .twitch::before {
     font: var(--fa-font-brands);
     content: "\f1e8";
     color: var(--clr-twitch);
+    transition: transform var(--scale-timing) ease-in-out;
+}
+
+.twitch:hover::before {
+    transform: scale(var(--scale-change));
 }
 
 .steam::before {
     font: var(--fa-font-brands);
     content: "\f1b6";
     color: var(--clr-steam);
+    transition: transform var(--scale-timing) ease-in-out;
+}
+
+.steam:hover::before {
+    transform: scale(var(--scale-change));
 }
 
 .github::before {
     font: var(--fa-font-brands);
     content: "\f09b";
     color: var(--clr-github);
+    transition: transform var(--scale-timing) ease-in-out;
+}
+
+.github:hover::before {
+    transform: scale(var(--scale-change));
 }
 
 
-/* 404 */
+/* misc */
 
 .notfound {
     margin: 0 auto;
@@ -296,6 +294,12 @@ a.contact:hover {
     height: 100%;
     margin-top: 10%;
     text-align: center;
+}
+
+.java-disabled {
+    font-weight: 800;
+    font-size: 2rem;
+    color: red;
 }
 
 
