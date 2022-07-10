@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var text = [
+    var blurbs = [
         "chaeyoung <3",
         "caulk and bawlz",
         "read it in a new york accent.",
@@ -10,6 +10,6 @@ $(document).ready(function() {
         "Look mum, I'm in a blurb!",
         "Home-made !"
     ];
-    var x = Math.floor((Math.random() * text.length));
-    $('#blurb').html(text[x]);
+    var x = Math.floor((Math.random() * blurbs.length));
+    $('#blurb').html(blurbs[x]);
 });

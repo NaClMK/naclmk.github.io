@@ -3,21 +3,8 @@
 ::before,
 ::after {
     box-sizing: border-box;
-}
-
-:root {
-    --clr-discord: #5865F2;
-    --clr-twitter: #00acee;
-    --clr-twitch: #6441a5;
-    --clr-youtube: #ff0000;
-    --clr-steam: #2a475e;
-    --clr-github: #646464;
-    --box-shadow: 0 0 .5rem #24242b;
-    --about-border: .35rem;
-    --about-gap: 2rem;
-    --about-padding: 1.5rem;
-    --scale-change: 1.1;
-    --scale-timing: .3s;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -29,7 +16,18 @@ html {
     margin: 0;
     padding: 0;
     color: #ccc;
-    user-select: none;
+}
+
+:root {
+    --clr-discord: #5865F2;
+    --clr-twitter: #00acee;
+    --clr-twitch: #6441a5;
+    --clr-youtube: #ff0000;
+    --clr-steam: #2a475e;
+    --clr-github: #646464;
+    --shadow: 0 0 .5rem #24242b;
+    --scale-change: 1.1;
+    --scale-timing: .3s;
 }
 
 
@@ -130,8 +128,8 @@ nav a.disabled {
     text-decoration: none;
 }
 
-.nav__spacer,
-.nav__spacer::before {
+.spacer,
+.spacer::before {
     color: rgba(128, 128, 128, 0.75);
     content: "|";
 }
@@ -155,8 +153,12 @@ nav a.disabled {
     font-weight: 900;
 }
 
+.hero__greet::before {
+    content: "Hello, my name is Hope";
+}
+
 .hero__blurb {
-    width: 60%;
+    min-width: 60%;
     margin: 0 auto;
     background-color: rgba(35, 35, 35, 0.75);
     border-radius: .35rem;
@@ -164,18 +166,14 @@ nav a.disabled {
     font-style: oblique;
     font-size: 1.5rem;
     color: rgba(145, 145, 135, 0.75);
-    box-shadow: var(--box-shadow);
-}
-
-.hero__greet::before {
-    content: "Hello, my name is Hope";
+    box-shadow: var(--shadow);
 }
 
 
 /* contact page content */
 
 .contact-container {
-    margin: 1rem 15%;
+    margin: 1rem 15vw;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-auto-rows: auto;
@@ -186,11 +184,12 @@ nav a.disabled {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
     text-align: center;
     padding: 2rem;
     background-color: rgba(35, 35, 35, 0.75);
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--shadow);
     font-size: 5rem;
     flex: 100%;
 }
@@ -204,6 +203,7 @@ nav a.disabled {
 .contact__title {
     color: gray;
     font-size: 2.25rem;
+    padding-bottom: .5rem;
 }
 
 .contact__name {
@@ -218,15 +218,19 @@ a.contact:hover {
     color: white;
 }
 
+.discord:hover::before,
+.youtube:hover::before,
+.twitch:hover::before,
+.steam:hover::before,
+.github:hover::before {
+    transform: scale(var(--scale-change)) rotate(-5deg);
+}
+
 .discord::before {
     font: var(--fa-font-brands);
     content: "\f392";
     color: var(--clr-discord);
     transition: transform var(--scale-timing) ease-in-out;
-}
-
-.discord:hover::before {
-    transform: scale(var(--scale-change));
 }
 
 .twitter::before {
@@ -237,7 +241,7 @@ a.contact:hover {
 }
 
 .twitter:hover::before {
-    transform: scale(var(--scale-change));
+    transform: scale(var(--scale-change)) rotate(-5deg);
 }
 
 .youtube::before {
@@ -247,19 +251,11 @@ a.contact:hover {
     transition: transform var(--scale-timing) ease-in-out;
 }
 
-.youtube:hover::before {
-    transform: scale(var(--scale-change));
-}
-
 .twitch::before {
     font: var(--fa-font-brands);
     content: "\f1e8";
     color: var(--clr-twitch);
     transition: transform var(--scale-timing) ease-in-out;
-}
-
-.twitch:hover::before {
-    transform: scale(var(--scale-change));
 }
 
 .steam::before {
@@ -269,19 +265,11 @@ a.contact:hover {
     transition: transform var(--scale-timing) ease-in-out;
 }
 
-.steam:hover::before {
-    transform: scale(var(--scale-change));
-}
-
 .github::before {
     font: var(--fa-font-brands);
     content: "\f09b";
     color: var(--clr-github);
     transition: transform var(--scale-timing) ease-in-out;
-}
-
-.github:hover::before {
-    transform: scale(var(--scale-change));
 }
 
 
