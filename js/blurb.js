@@ -8,7 +8,8 @@ $(document).ready(function() {
         "BOYS! *uhh* BOYS!",
         "I was busy thinkin' bout BOYS",
         "Look mum, I'm in a blurb!",
-        "Home-made !"
+        "Home-made !",
+        "check out nanos.club !!"
     ];
     var x = Math.floor((Math.random() * blurbs.length));
     $('#blurb').html(blurbs[x]);
